@@ -1,0 +1,9 @@
+{
+    "fullName": "Test User",
+    "email": "test@example.com",
+    "phone": "1234567890",
+    "positionType": "Company Driver",
+    "experienceYears": 2,
+    "cdlNumber": "A1234567",
+    "hasCleanRecord": true
+}

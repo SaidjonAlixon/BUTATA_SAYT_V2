@@ -1,0 +1,182 @@
+Quyidagi Frontend Dizayn uchun to‘liq texnik spetsifikatsiya (TZ) bo‘lib, ikki tilli (Uzbekcha + English) zamonaviy, ko‘p animatsiyali logistika saytini yaratish uchun yo‘l-yo‘riq beradi. Asosiy tavsiya etilgan yo‘l Next.js + React bilan i18n, Framer Motion/Lottie bilan animatsiya, Tailwind CSS yoki CSS-in-JS styling bilan bajarish.
+
+1) Umumiy maqsad
+- Maqsad: Butata LLC logistika kompaniyasi uchun 5 sahifali (Home, About Us, Owner Operators, Company Drivers, Apply Now) ikki tilli, zamonaviy, yuqori animatsiyali frontend.
+- Asosiy talablar: intuitiv navigatsiya, dinamik animatsiyalar, tez yuklanish, i18n oson almashuvi, SEO va accessibility ta’minoti.
+
+2) Til va URL arxitekturasi
+- Tillar: Uzbekcha (asosiy) + English (ikkinchi) bo‘ladi.
+- URL strukturasi (i18n):
+  - /uz/home, /uz/about-us, /uz/owner-operators, /uz/company-drivers, /uz/apply-now
+  - /en/home, /en/about-us, /en/owner-operators, /en/company-drivers, /en/apply-now
+- Til switcher: har sahifada yuqori o‘ng qismida tugma/buton orqali til almashinuvi.
+- SEO: hreflang teglari orqali tilga mos indeksatsiya; locale–ga mos meta ma’lumotlar; alt matnlar.
+
+3) Texnik arxitektura
+- Frontend: Next.js + React (TypeScript tavsiya etiladi).
+- Styling: Tailwind CSS yoki CSS-in-JS (Emotion/styled-components). Ikki yo‘l ham mos keladi; loyiha ehtiyojiga qarab tanlanadi.
+- Animatsiya: Framer Motion asosiy; Lottie (ikonalar uchun); GSAP mumkin bo‘lsa murakkab animatsiyalar uchun.
+- I18n: Next.js localization (built-in) yoki next-i18next integratsiyasi.
+- CMS/Content: 
+  - Variant A (soddalashtirilgan): statik kontent JSON/Markdown orqali.
+  - Variant B (dinamik kontent): Contentful yoki Strapi kabi headless CMS.
+- Hosting & SEO: Vercel/Netlify; image optimization; sitemaps va structured data (JSON-LD).
+
+4) Sahifa arxitektura va yo‘nalish (Routing)
+- Sahifa to‘plami:
+  - Home: hero, stats, Why Us, CTA (Apply Now), teaser sections.
+  - About Us: kompaniya tarixi, qadriyatlar, timeline, liderlar jamoasi.
+  - Owner Operators: sheriklik modeli, onboarding bosqichlari, testimonies.
+  - Company Drivers: foydalar, karyera yo‘li, ish o‘rinlari.
+  - Apply Now: multistep formasi (kontakt, tajriba, litsenziyalar, dosyalar), validation.
+- Qo‘shimcha modullar (ixtiyoriy): Blog/Yangiliklar, FAQ, Kontakt sahifasi.
+- Komponentlar tartibi:
+  - Global Navbar & Footer
+  - Hero blok, Cards, Stats, Timeline, Testimonials
+  - Formlar: input, select, file upload, validation feedback
+  - Icon set: truck, map, warehouse, clock, checklist
+  - Backgrounds: gradient/parallax layers, subtle particles
+
+5) UI/UX dizayn yondashuvi
+- Umumiy identitet:
+  - Zamonaviy, profesional, navbatdagi gradientlar, yo‘l-uklari, omborlar obrazlari.
+- Tipografiya:
+  - 2 xil font kombinatsiyasi (sans for UI, serif for accents) – kontrastli o‘qilishi.
+- Rangi va gradientlar:
+  - Brend palitrasi: xavfsiz, yuqori kontrastli, logistika hissi beruvchi ranglar; gradientlar ko‘rinishi uchun mos.
+- Animatsiya dizayni:
+  - Sahifa o‘tishlarida silliq tranzitsiyalar.
+  - Scroll-trigger reveals, parallax harakatlar.
+  - Ikonlar uchun Lottie/SVG animatsiyalari; CTA hover/micro-interactions.
+  - Background: gradient shapes, soft particles, dinamika.
+- Responsivlik:
+  - 12-koposhli grid, breakpoints: mobile (≤ 640px), tablet (641–1024px), desktop (≥ 1025px).
+  - Touch-friendly navigatsiya, accessibility-friendly controls.
+
+6) Komponentlar kitobi (UI Library)
+- Global:
+  - Navbar (logo, language switcher, navigation links)
+  - Footer (linklar, contact, social icons)
+  - Design tokens: color, typography, spacing scale, border radius
+- Shared UI:
+  - Button, Card, Icon, IconButton
+  - Input, Textarea, Select, Checkbox, Radio
+  - Modal, Drawer (for mobile menu)
+- Page-specific:
+  - Hero, StatsBlock, Timeline, Testimonials, CareerCard, JobListCard
+  - MultistepForm, Step, Progress bar
+- Asset standards:
+  - SVG icons, Lottie assets, optimized images, lazy loading
+- API-friendly props:
+  - Components designed to accept data via props (content models)
+
+7) Animatsiya va interaktivlik yo‘riqnomasi
+- Asosiy qo‘llanma:
+  - Framer Motion yordamida sahifa o‘rtasidagi animatsiyalar, in-view reveals, scroll-triggering
+  - Lottie bilan ikonalar va mikroriklar
+  - GSAP — murakkab sequential animatsiyalar uchun
+- Performance:
+  - Animatsiya uchun minimal dom elementlar; rendingni bloklamaslik
+  - Push-to-request bilan asynchronous data loading
+- Accessibility-friendly:
+  - Motion-sensitivity variant: prefers-reduced-motion uchun alternativ UI
+
+8) Accessibility (A11y)
+- Keyboard navigatsiya: barcha interaktiv elementlar tab-navigatsiya qabul qiladi.
+- ARIA roles va label’lar: formalar, nav, menular uchun.
+- Rangi kontrasti: WCAG AA yoki undan yuqori.
+- Skip-to-content, fokus ringlarining ko‘rinishi.
+
+9) Performans va yuklanish budgeti
+- JS/CSS o‘lchami: 250–350 KB gzipped boshlang‘ich bajaruv, keyinchalik lazy-loaded.
+- Images: lazy loading, modern formatlar (webp/avif) where possible.
+- SSR/SSG: sahifa tuzilishi uchun SSR yoki SSG (Home/Estimate-first content uchun SSG; dinamik kontent uchun SSR).
+- Caching: ISR yoki revalidateOptions.
+
+10) SEO, strukturali ma’lumotlar
+- Metadata: title, description, og:image, twitter:image
+- Structured data: Organization, LocalBusiness, JobPosting (agar Apply Now uchun mos bo‘lsa)
+- Sitemaps va hreflang
+- Canonical URLs: tilga mos canonical
+
+11) Kontent va i18n jarayoni
+- Til-saqlovchi: Uzbekcha asos, English tarjima uchun parallel locale fayllari
+- Kontent modeli:
+  - Page content bloklari: hero title, subtitle, CTA labels, body copy
+  - Multilingual fields: same structure, language-specific content
+- Translation workflow:
+  - Glossary, style guide, terminoloji boshqasi
+  - Tarjima sifatini tekshirish (proofreading, QA)
+
+12) Ma’lumotlar va API integratsiya (front-end)
+- Ba’zi taxminiy API endpoint’lar:
+  - /api/v1/content/home, /api/v1/content/about, /api/v1/content/jobs (CMS orqali)
+  - /api/v1/apply (form submission)
+- Data format (JSON):
+  - locale: 'uz' | 'en'
+  - content blocks: [{ type, fields }, ...]
+- Auth va xavfsizlik:
+  - API tokenlar, CSRF himoya, input validation
+
+13) Testlash strategiyasi
+- Unit tests: komponentlar uchun (Jest + React Testing Library)
+- Integration tests: sahifa yo‘nalishlari, form validation
+- E2E tests: Playwright yoki Cypress bilan foydalanuvchi oqimlari
+- Visual regression: Percy yoki equivalent
+- Accessibility: a11y tekshiruvlari
+
+14) Deploy va CI/CD
+- Hosting: Vercel/Nettlify; preview deployments
+- Build steps: typecheck (TypeScript), lint, tests, build
+- Environmentlar: dev/stage/prod
+- Analytics: GA4/segment.yaml konfiguratsiyasi
+
+15) Xavfsizlik va qonunchilik
+- Formalarda input validation, CSRF himoya
+- Cookie consent, privacy policy mosligi
+- Asset-lisensiyalar va brend xavfsizligi
+
+16) Ta’riflash uchun jadvallar va chiqarishlar (Deliverables)
+- UI kit va design tokens (colors, typography, spacing)
+- Komponentlar ro‘yhati (props contracts bilan)
+- Frontend kodi bazasi (Next.js project structure)
+- i18n konfiguratsiya fayllari va locale fayllari
+- Content models (CMSda yoki JSON/Markdown format)
+- Dokumentatsiya: style guide, branching/merging rejasi
+
+17) Xatoliklar uchun echimlar
+- Animatsiya hajmi katta bo‘lsa: dinamik yuklash, alternative statik hero
+- Tarjima sifati: glossary, style guide, QA kirovi
+- Til switcher arxitekturasi: URL prefixlar yoki subdomain bo‘yicha moslashtiriladi; SEO bilan muvofiqlik nazorat qilinadi
+
+18) Misol fayl tuzilishi (Directory Skeleton) 
+- app/
+  - pages/
+    - uz/
+      - home.tsx
+      - about-us.tsx
+      - owner-operators.tsx
+      - company-drivers.tsx
+      - apply-now.tsx
+    - en/
+      - home.tsx
+      - about-us.tsx
+      - owner-operators.tsx
+      - company-drivers.tsx
+      - apply-now.tsx
+  - components/
+  - styles/
+  - lib/
+  - content/ (CMS yoki static content uchun)
+  - public/
+  - i18n.config.ts (yoki next.config.js ichida i18n sozlamalari)
+
+Savollar va kelishuvlar (tezkor qarorlar uchun)
+- Til switcher prefikslari yoki subdomain ishlatilishini xohlaysizmi?
+- CMS tanlovi: Contentful/Strapi/yoki statik JSON bilan boshlaymizmi?
+- Blog/FAQ/Job postings kabi dinamik kontent bo‘lishini xohlaysizmi?
+- «Apply Now» uchun fayl yuklash imkoniyatlari (CV, cover letter) talab qilinadimi?
+- Brend qoidalari (ranglar, logotip, fontlar) bor yoki yangidan boshlaymizmi?
+- Loyihani nima bilan birga boshlasak (bosqichlar: 1) konsept wireframes, 2) CMS integratsiya, 3) to‘liq frontend, 4) QA/Deploy)?
+
+Agar siz “eng to‘liq, hammasi uyg‘unlashgan” variantni tanlasangiz, yuqoridagi TZ asosida konkret yozuvlar, wireframes, komponent ro‘yxati va texnik spetsifikatsiya fayllarini tayyorlab beraman. Keyingi qadam: til-switcher ta’minoti va CMS tanlovi bo‘yicha qaror qiling; shundan so‘ng ish boshlar ekan.

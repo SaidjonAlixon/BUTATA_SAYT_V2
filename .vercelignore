@@ -1,0 +1,13 @@
+.env
+.env.local
+.env.*.local
+node_modules
+*.log
+.DS_Store
+
+# Exclude from serverless (Hobby plan 12 function limit)
+api/applications.backup.ts
+api/debug.ts
+api/env-check.ts
+api/health.ts
+api/admin/me.ts

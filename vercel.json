@@ -1,0 +1,24 @@
+{
+  "rewrites": [
+    {"source": "/api/applications", "destination": "/api/applications"},
+    {"source": "/api/contacts", "destination": "/api/index?__path=/api/contacts"},
+    {"source": "/api/admin/login", "destination": "/api/admin/login"},
+    {"source": "/api/admin/stats", "destination": "/api/admin/stats"},
+    {"source": "/api/admin/applications", "destination": "/api/admin/applications"},
+    {"source": "/api/admin/jobs", "destination": "/api/admin/jobs"},
+    {"source": "/api/admin/contacts", "destination": "/api/admin/contacts"},
+    {"source": "/api/admin/news", "destination": "/api/admin/news"},
+    {"source": "/api/admin/news/:id", "destination": "/api/admin/news-by-id?id=:id"},
+    {"source": "/api/admin/upload-url", "destination": "/api/admin/upload-url"},
+    {"source": "/api/news", "destination": "/api/news"},
+    {"source": "/api/quotes", "destination": "/api/index?__path=/api/quotes"},
+    {"source": "/api/upload-url", "destination": "/api/upload-url"},
+    {"source": "/api/(.*)", "destination": "/api/index?__path=/api/$1"},
+    {"source": "/(.*)", "destination": "/index.html"}
+  ],
+  "functions": {
+    "api/index.ts": {"maxDuration": 60, "memory": 1024},
+    "api/upload-url.ts": {"maxDuration": 30, "memory": 256},
+    "api/admin/upload-url.ts": {"maxDuration": 30, "memory": 256}
+  }
+}
