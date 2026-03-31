@@ -22,7 +22,6 @@ type ParsedBody = {
   experienceYears: string | number;
   address?: string;
   cdlType?: string;
-  ssn?: string;
   hasCleanRecord: boolean;
   docFiles: DocFile[];
   docUrls: DocUrl[];
@@ -69,7 +68,6 @@ async function parseBody(req: VercelRequest): Promise<ParsedBody> {
 
     const docFiles: DocFile[] = [];
     const f = files as Record<string, unknown>;
-    pushFile(f.ssnImage, "SSN (Image copy)", docFiles);
     pushFile(f.driverLicenseFront, "Driver License (Front)", docFiles);
     pushFile(f.driverLicenseBack, "Driver License (Back)", docFiles);
     pushFile(f.medicalCard, "Medical Card", docFiles);
@@ -88,7 +86,6 @@ async function parseBody(req: VercelRequest): Promise<ParsedBody> {
       experienceYears: getStr(fields.experienceYears) || "N/A",
       address: getStr(fields.address) || undefined,
       cdlType: getStr(fields.cdlType) || undefined,
-      ssn: getStr(fields.ssn) || undefined,
       hasCleanRecord: getStr(fields.hasCleanRecord) !== "false",
       docFiles,
       docUrls: [],
@@ -145,7 +142,6 @@ async function parseBody(req: VercelRequest): Promise<ParsedBody> {
     experienceYears: body.experienceYears ?? "N/A",
     address: typeof body.address === "string" ? body.address : undefined,
     cdlType: typeof body.cdlType === "string" ? body.cdlType : undefined,
-    ssn: typeof body.ssn === "string" ? body.ssn : undefined,
     hasCleanRecord: body.hasCleanRecord !== false,
     docFiles,
     docUrls,
@@ -211,7 +207,6 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
         (body.address ? `<b>Address:</b> ${esc(body.address)}\n` : "") +
         `<b>Experience:</b> ${body.experienceYears} years\n` +
         (body.cdlType ? `<b>CDL Type:</b> ${esc(body.cdlType)}\n` : "") +
-        (body.ssn ? `<b>SSN:</b> ${esc(body.ssn)}\n` : "") +
         `<b>Clean Record:</b> ${body.hasCleanRecord ? "Yes" : "No"}\n` +
         `<b>Documents:</b> ${docSection}`;
 

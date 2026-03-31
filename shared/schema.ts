@@ -88,7 +88,6 @@ export const insertApplicationSchema = z.object({
   experienceYears: z.number().int().min(0),
   cdlType: z.string().optional(),
   hasCleanRecord: z.boolean(),
-  ssn: z.string().optional(),
   resumeUrl: z.string().optional(),
 });
 

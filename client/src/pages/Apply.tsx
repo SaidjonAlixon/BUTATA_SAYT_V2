@@ -34,10 +34,8 @@ const formSchema = z.object({
   positionType: z.string().min(1, "Please select a position"),
   experienceYears: z.coerce.number().min(0, "Experience cannot be negative"),
   cdlType: z.string().optional(),
-  ssn: z.string().optional(),
   hasCleanRecord: z.boolean().default(true),
   acceptTerms: z.boolean().optional(),
-  ssnImage: z.any().optional().nullable(),
   driverLicenseFront: z.any().optional().nullable(),
   driverLicenseBack: z.any().optional().nullable(),
   medicalCard: z.any().optional().nullable(),
@@ -93,10 +91,8 @@ export default function Apply() {
       positionType: "Company Driver",
       experienceYears: 0,
       cdlType: "Class A CDL",
-      ssn: "",
       hasCleanRecord: true,
       acceptTerms: false,
-      ssnImage: null,
       driverLicenseFront: null,
       driverLicenseBack: null,
       medicalCard: null,
@@ -121,7 +117,6 @@ export default function Apply() {
           docUrls.push({ url: val, section, name });
         }
       };
-      addUrl(values.ssnImage, "SSN (Image copy)", "ssn");
       addUrl(values.driverLicenseFront, "Driver License (Front)", "license-front");
       addUrl(values.driverLicenseBack, "Driver License (Back)", "license-back");
       addUrl(values.medicalCard, "Medical Card", "medical");
@@ -150,7 +145,6 @@ export default function Apply() {
         hasCleanRecord: values.hasCleanRecord !== undefined ? values.hasCleanRecord : true,
         address: values.address || undefined,
         cdlType: values.cdlType || undefined,
-        ssn: values.ssn || undefined,
         docUrls,
       };
 
@@ -219,7 +213,7 @@ export default function Apply() {
   const prevStep = () => setCurrentStep((prev) => prev - 1);
 
   const setSingleFile = useCallback(async (
-    field: "ssnImage" | "driverLicenseFront" | "driverLicenseBack" | "medicalCard" | "annualTruckInspection" | "truckPicEngine" | "truckPicUnderEngine" | "truckPicTires" | "registrationCard",
+    field: "driverLicenseFront" | "driverLicenseBack" | "medicalCard" | "annualTruckInspection" | "truckPicEngine" | "truckPicUnderEngine" | "truckPicTires" | "registrationCard",
     file: File | null
   ) => {
     if (!file) {
@@ -248,7 +242,7 @@ export default function Apply() {
   }, [form, toast]);
 
   const handleFileInputChange = useCallback((
-    field: "ssnImage" | "driverLicenseFront" | "driverLicenseBack" | "medicalCard" | "annualTruckInspection" | "truckPicEngine" | "truckPicUnderEngine" | "truckPicTires" | "registrationCard",
+    field: "driverLicenseFront" | "driverLicenseBack" | "medicalCard" | "annualTruckInspection" | "truckPicEngine" | "truckPicUnderEngine" | "truckPicTires" | "registrationCard",
     e: React.ChangeEvent<HTMLInputElement>
   ) => {
     const file = e.target.files?.[0];
@@ -444,28 +438,6 @@ export default function Apply() {
                 >
                   <div className="space-y-5">
                     <h2 className="text-xl font-bold">Owner Operator – Documents & Truck</h2>
-
-                    <div className="space-y-2">
-                      <Label htmlFor="ssn-oo">Your SSN or EID number</Label>
-                      <Input
-                        id="ssn-oo"
-                        placeholder="Your SSN or EID number"
-                        {...form.register("ssn")}
-                      />
-                    </div>
-
-                    <div className="space-y-2">
-                      <Label>SSN (Image Copy)</Label>
-                      <div className="flex items-center gap-2">
-                        <Input type="file" accept={ACCEPTED_TYPES} className="hidden" id="ssnImage-oo" onChange={(e) => handleFileInputChange("ssnImage", e)} />
-                        <Button type="button" variant="outline" size="sm" onClick={() => document.getElementById("ssnImage-oo")?.click()}>Choose file</Button>
-                        <span className="text-sm text-muted-foreground">
-                          {uploadingField === "ssnImage" ? (
-                            <span className="text-emerald-600 dark:text-emerald-500">Uploading file... Please wait.</span>
-                          ) : form.watch("ssnImage") ? "Uploaded" : "File not selected"}
-                        </span>
-                      </div>
-                    </div>
 
                     <div className="space-y-2">
                       <Label>Driver License (Both Sides)</Label>
@@ -686,41 +658,6 @@ export default function Apply() {
                         <option value="Class B CDL">Class B CDL</option>
                         <option value="Class C CDL">Class C CDL</option>
                       </select>
-                    </div>
-
-                    <div className="space-y-2">
-                      <Label htmlFor="ssn">Your SSN or EID number</Label>
-                      <Input
-                        id="ssn"
-                        placeholder="Your SSN or EID number"
-                        {...form.register("ssn")}
-                      />
-                    </div>
-
-                    <div className="space-y-2">
-                      <Label>SSN (Image copy)</Label>
-                      <div className="flex items-center gap-2">
-                        <Input
-                          type="file"
-                          accept={ACCEPTED_TYPES}
-                          className="hidden"
-                          id="ssnImage"
-                          onChange={(e) => handleFileInputChange("ssnImage", e)}
-                        />
-                        <Button
-                          type="button"
-                          variant="outline"
-                          size="sm"
-                          onClick={() => document.getElementById("ssnImage")?.click()}
-                        >
-                          Choose file
-                        </Button>
-                        <span className="text-sm text-muted-foreground">
-                          {uploadingField === "ssnImage" ? (
-                            <span className="text-emerald-600 dark:text-emerald-500">Uploading file... Please wait.</span>
-                          ) : form.watch("ssnImage") ? "Uploaded" : "File not selected"}
-                        </span>
-                      </div>
                     </div>
 
                     <div className="space-y-2">
@@ -973,24 +910,6 @@ export default function Apply() {
                           <div className="grid grid-cols-2">
                             <span className="text-muted-foreground">CDL Type:</span>
                             <span className="font-medium text-right">{form.getValues("cdlType")}</span>
-                          </div>
-                        </>
-                      )}
-                      {form.getValues("ssn") && (
-                        <>
-                          <Separator />
-                          <div className="grid grid-cols-2">
-                            <span className="text-muted-foreground">SSN:</span>
-                            <span className="font-medium text-right">{form.getValues("ssn")}</span>
-                          </div>
-                        </>
-                      )}
-                      {form.getValues("ssnImage") && (
-                        <>
-                          <Separator />
-                          <div className="grid grid-cols-2">
-                            <span className="text-muted-foreground">SSN (Image):</span>
-                            <span className="font-medium text-right">Uploaded</span>
                           </div>
                         </>
                       )}

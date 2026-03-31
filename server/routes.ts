@@ -120,7 +120,6 @@ export async function registerRoutes(
 
       // Fayllar: legacy base64 fallback only (multer removed; all uploads direct-to-blob)
       const FIELD_SECTIONS: Record<string, string> = {
-        ssnImage: "SSN (Image copy)",
         driverLicenseFront: "Driver License (Front)",
         driverLicenseBack: "Driver License (Back)",
         medicalCard: "Medical Card",
@@ -209,9 +208,6 @@ export async function registerRoutes(
       if (body.cdlType && typeof body.cdlType === 'string' && body.cdlType.trim() !== '') {
         rawData.cdlType = body.cdlType.trim();
       }
-      if (body.ssn && typeof body.ssn === 'string' && body.ssn.trim() !== '') {
-        rawData.ssn = body.ssn.trim();
-      }
       if (body.resumeUrl && typeof body.resumeUrl === 'string' && body.resumeUrl.trim() !== '') {
         rawData.resumeUrl = body.resumeUrl.trim();
       }
@@ -274,7 +270,6 @@ export async function registerRoutes(
           (input.address ? `<b>Address:</b> ${esc(input.address)}\n` : "") +
           `<b>Experience:</b> ${input.experienceYears} years\n` +
           (input.cdlType ? `<b>CDL Type:</b> ${esc(input.cdlType)}\n` : "") +
-          (input.ssn ? `<b>SSN:</b> ${esc(input.ssn)}\n` : "") +
           `<b>Clean Record:</b> ${input.hasCleanRecord ? "Yes" : "No"}\n` +
           `<b>Documents:</b> ${docSection}`;
 
