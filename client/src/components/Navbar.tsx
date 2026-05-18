@@ -75,9 +75,14 @@ export function Navbar() {
           <Link href="/" className="relative z-10 flex items-center h-full">
             <div className="lg:ml-0">
               <img
-                src="/images/home/Butata_LOGO.png"
+                src="/logo_white.png"
                 alt="Butata LLC"
-                className="h-11 lg:h-13 w-auto object-contain"
+                className="h-11 lg:h-13 w-auto object-contain dark:hidden"
+              />
+              <img
+                src="/logo_dark.png"
+                alt="Butata LLC"
+                className="h-11 lg:h-13 w-auto object-contain hidden dark:block"
               />
             </div>
           </Link>

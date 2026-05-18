@@ -100,7 +100,7 @@ export function Footer() {
             {/* Col 1: Brand */}
             <div className="space-y-4 sm:space-y-6">
               <Link href="/" className="inline-block">
-                <img src="/images/home/Butata_LOGO.png" alt="Butata LLC" className="h-10 sm:h-12 w-auto object-contain" />
+                <img src="/logo_dark.png" alt="Butata LLC" className="h-10 sm:h-12 w-auto object-contain" />
               </Link>
               <p className="text-gray-400 text-sm leading-relaxed max-w-md">
                 Logistic service provider company plays a pivotal role in the global supply chain logistic service provider.
