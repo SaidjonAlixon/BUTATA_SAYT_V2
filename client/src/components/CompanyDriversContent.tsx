@@ -63,7 +63,7 @@ export default function CompanyDriversContent() {
                         className="flex flex-col sm:flex-row gap-4 justify-center"
                     >
                         <Link href="/apply">
-                            <Button className="h-16 px-10 text-xl bg-red-600 hover:bg-red-700 text-white font-bold uppercase tracking-wider rounded-none skew-x-[-10deg] border border-red-500 shadow-[0_0_20px_rgba(220,38,38,0.3)] dark:shadow-[0_0_20px_rgba(220,38,38,0.5)] transition-all hover:skew-x-0">
+                            <Button className="h-16 px-10 text-xl bg-red-600 hover:bg-red-700 text-white font-bold uppercase tracking-wider rounded-none skew-x-[-10deg] border border-red-500 shadow-[0_0_20px_rgba(238,79,39,0.3)] dark:shadow-[0_0_20px_rgba(238,79,39,0.5)] transition-all hover:skew-x-0">
                                 <span className="skew-x-[10deg] inline-block">Apply Now</span>
                             </Button>
                         </Link>

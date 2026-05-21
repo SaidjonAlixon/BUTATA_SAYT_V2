@@ -11,6 +11,24 @@ export default {
         sm: ".1875rem", /* 3px */
       },
       colors: {
+        red: {
+          50: "#fef3f0",
+          100: "#fde8e2",
+          200: "#fbcfc4",
+          300: "#f7a08c",
+          400: "#f3846a",
+          500: "#f06a48",
+          600: "#ee4f27",
+          700: "#d64522",
+          800: "#b8381c",
+          900: "#962d16",
+          950: "#5a1a0d",
+        },
+        brand: {
+          DEFAULT: "#ee4f27",
+          hover: "#d64522",
+          light: "#f06a48",
+        },
         // Flat / base colors (regular buttons)
         background: "hsl(var(--background) / <alpha-value>)",
         foreground: "hsl(var(--foreground) / <alpha-value>)",

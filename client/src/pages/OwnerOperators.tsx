@@ -285,8 +285,8 @@ export default function OwnerOperators() {
                   <AreaChart data={EARNINGS_DATA}>
                     <defs>
                       <linearGradient id="colorRevenue" x1="0" y1="0" x2="0" y2="1">
-                        <stop offset="5%" stopColor="#ef4444" stopOpacity={0.3} />
-                        <stop offset="95%" stopColor="#ef4444" stopOpacity={0} />
+                        <stop offset="5%" stopColor="#ee4f27" stopOpacity={0.3} />
+                        <stop offset="95%" stopColor="#ee4f27" stopOpacity={0} />
                       </linearGradient>
                     </defs>
                     <CartesianGrid strokeDasharray="3 3" stroke="#94a3b8" opacity={0.2} />
@@ -296,7 +296,7 @@ export default function OwnerOperators() {
                       contentStyle={{ backgroundColor: 'var(--tooltip-bg, #0f172a)', border: '1px solid #334155', borderRadius: '12px', color: '#fff' }}
                       itemStyle={{ color: '#fff' }}
                     />
-                    <Area type="monotone" dataKey="amount" stroke="#ef4444" strokeWidth={4} fillOpacity={1} fill="url(#colorRevenue)" />
+                    <Area type="monotone" dataKey="amount" stroke="#ee4f27" strokeWidth={4} fillOpacity={1} fill="url(#colorRevenue)" />
                   </AreaChart>
                 </ResponsiveContainer>
               </motion.div>

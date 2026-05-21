@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Crown, FileBadge, ShieldCheck } from "lucide-react";
 
 // Custom User Red theme
-const redGradient = "from-[#b91c1c] via-[#ce181e] to-[#b91c1c]";
+const redGradient = "from-[#d64522] via-[#ee4f27] to-[#d64522]";
 
 const features = [
     {
@@ -45,15 +45,15 @@ export function FeatureCards() {
                             className="group relative h-full"
                         >
                             {/* Card Container - Simplified to Single Layer for perfect fill */}
-                            <div className="relative h-full bg-slate-100 dark:bg-slate-900/40 backdrop-blur-md border border-slate-200 dark:border-white/5 rounded-[2rem] overflow-hidden transition-all duration-700 hover:shadow-[0_20px_60px_-15px_rgba(206,24,30,0.3)] dark:hover:shadow-[0_20px_60px_-15px_rgba(206,24,30,0.5)] flex flex-col items-center text-center">
+                            <div className="relative h-full bg-slate-100 dark:bg-slate-900/40 backdrop-blur-md border border-slate-200 dark:border-white/5 rounded-[2rem] overflow-hidden transition-all duration-700 hover:shadow-[0_20px_60px_-15px_rgba(238,79,39,0.3)] dark:hover:shadow-[0_20px_60px_-15px_rgba(238,79,39,0.5)] flex flex-col items-center text-center">
 
                                 {/* === REALISTIC SEAMLESS LIQUID WAVE ANIMATION === */}
                                 <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden rounded-[2rem]">
-                                    <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-[#ce181e] translate-y-[132%] group-hover:translate-y-[-40%] transition-transform duration-[4s] ease-in-out" style={{ willChange: 'transform' }}>
+                                    <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-[#ee4f27] translate-y-[132%] group-hover:translate-y-[-40%] transition-transform duration-[4s] ease-in-out" style={{ willChange: 'transform' }}>
                                         {/* Wave 1 - Fast Rotating Square */}
-                                        <div className="absolute top-[-40%] left-[-25%] w-[150%] h-[150%] bg-[#ce181e] animate-wave opacity-100 rounded-[40%]" style={{ animationDuration: '8s', willChange: 'transform', transform: 'translateZ(0)' }}></div>
+                                        <div className="absolute top-[-40%] left-[-25%] w-[150%] h-[150%] bg-[#ee4f27] animate-wave opacity-100 rounded-[40%]" style={{ animationDuration: '8s', willChange: 'transform', transform: 'translateZ(0)' }}></div>
                                         {/* Wave 2 - Slow Rotating Square (Offset) */}
-                                        <div className="absolute top-[-45%] left-[-20%] w-[150%] h-[150%] bg-[#ce181e]/40 animate-wave rounded-[45%]" style={{ animationDuration: '12s', animationDelay: '-2s', willChange: 'transform', transform: 'translateZ(0)' }}></div>
+                                        <div className="absolute top-[-45%] left-[-20%] w-[150%] h-[150%] bg-[#ee4f27]/40 animate-wave rounded-[45%]" style={{ animationDuration: '12s', animationDelay: '-2s', willChange: 'transform', transform: 'translateZ(0)' }}></div>
                                     </div>
                                 </div>
 
@@ -63,17 +63,17 @@ export function FeatureCards() {
                                     {/* Icon Section */}
                                     <div className="relative mb-8 transition-transform duration-500 ease-out group-hover:scale-110 group-hover:-translate-y-2">
                                         {/* Rotating Ring */}
-                                        <div className="absolute inset-0 rounded-full border border-[#ce181e]/20 dark:border-[#ce181e]/30 group-hover:border-white/30 scale-125 opacity-0 group-hover:opacity-100 group-hover:rotate-180 transition-all duration-1000"></div>
+                                        <div className="absolute inset-0 rounded-full border border-[#ee4f27]/20 dark:border-[#ee4f27]/30 group-hover:border-white/30 scale-125 opacity-0 group-hover:opacity-100 group-hover:rotate-180 transition-all duration-1000"></div>
 
                                         {/* Icon Container */}
                                         <div className={`relative w-24 h-24 rounded-full bg-gradient-to-tr ${feature.gradient} p-0.5 shadow-2xl group-hover:shadow-white/20`}>
-                                            <div className="w-full h-full bg-white dark:bg-slate-900 group-hover:bg-[#ce181e] rounded-full flex items-center justify-center relative overflow-hidden transition-colors duration-500">
-                                                <feature.icon className={`w-10 h-10 text-[#ce181e] dark:text-white group-hover:text-white transition-colors duration-300 drop-shadow-[0_0_15px_rgba(206,24,30,0.4)] dark:drop-shadow-[0_0_15px_rgba(206,24,30,0.6)] group-hover:drop-shadow-none animate-sway`} strokeWidth={1.5} />
+                                            <div className="w-full h-full bg-white dark:bg-slate-900 group-hover:bg-[#ee4f27] rounded-full flex items-center justify-center relative overflow-hidden transition-colors duration-500">
+                                                <feature.icon className={`w-10 h-10 text-[#ee4f27] dark:text-white group-hover:text-white transition-colors duration-300 drop-shadow-[0_0_15px_rgba(238,79,39,0.4)] dark:drop-shadow-[0_0_15px_rgba(238,79,39,0.6)] group-hover:drop-shadow-none animate-sway`} strokeWidth={1.5} />
                                             </div>
                                         </div>
 
                                         {/* Number Badge */}
-                                        <div className="absolute -bottom-2 -right-2 bg-white dark:bg-slate-800 group-hover:bg-white text-[#ce181e] font-black font-display text-sm w-10 h-10 flex items-center justify-center rounded-full shadow-lg border-4 border-slate-50 dark:border-slate-900 group-hover:border-[#ce181e] z-20 group-hover:scale-110 transition-all duration-300">
+                                        <div className="absolute -bottom-2 -right-2 bg-white dark:bg-slate-800 group-hover:bg-white text-[#ee4f27] font-black font-display text-sm w-10 h-10 flex items-center justify-center rounded-full shadow-lg border-4 border-slate-50 dark:border-slate-900 group-hover:border-[#ee4f27] z-20 group-hover:scale-110 transition-all duration-300">
                                             {feature.id}
                                         </div>
                                     </div>

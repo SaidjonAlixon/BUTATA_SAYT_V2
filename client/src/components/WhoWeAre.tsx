@@ -61,7 +61,7 @@ export function WhoWeAre() {
                             transition={{ delay: 0.8, type: "spring", stiffness: 200 }}
                             className="absolute left-[45%] top-1/2 -translate-x-1/2 -translate-y-1/2 z-20"
                         >
-                            <div className="bg-[#1e293b] text-white p-8 rounded-3xl shadow-2xl border-l-[6px] border-[#ce181e] min-w-[200px]">
+                            <div className="bg-[#1e293b] text-white p-8 rounded-3xl shadow-2xl border-l-[6px] border-[#ee4f27] min-w-[200px]">
                                 <div className="text-center">
                                     <span className="block text-5xl font-black text-white mb-2">5+</span>
                                     <span className="text-gray-300 font-bold uppercase tracking-wider text-sm block">Years of<br />Excellence</span>
@@ -78,7 +78,7 @@ export function WhoWeAre() {
                             className="w-full h-[400px] object-cover"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                        <div className="absolute top-6 right-6 bg-[#1e293b] p-4 rounded-xl shadow-xl border-l-4 border-[#ce181e]">
+                        <div className="absolute top-6 right-6 bg-[#1e293b] p-4 rounded-xl shadow-xl border-l-4 border-[#ee4f27]">
                             <div className="text-center">
                                 <span className="block text-3xl font-black text-white">5+</span>
                                 <span className="text-gray-300 font-bold uppercase text-xs">Years</span>
@@ -95,11 +95,11 @@ export function WhoWeAre() {
                     >
                         <div>
                             <div className="flex items-center gap-4 mb-4">
-                                <span className="h-[2px] w-12 bg-[#ce181e]"></span>
-                                <span className="text-[#ce181e] font-bold tracking-[0.2em] uppercase text-sm">Who We Are</span>
+                                <span className="h-[2px] w-12 bg-[#ee4f27]"></span>
+                                <span className="text-[#ee4f27] font-bold tracking-[0.2em] uppercase text-sm">Who We Are</span>
                             </div>
                             <h2 className="text-4xl md:text-5xl font-black text-slate-900 dark:text-white mb-6 font-display uppercase">
-                                BUTATA <span className="text-[#ce181e]">LLC</span>
+                                BUTATA <span className="text-[#ee4f27]">LLC</span>
                             </h2>
                             <p className="text-slate-600 dark:text-gray-400 text-lg leading-relaxed">
                                 Butata LLC is a premier logistics provider committed to excellence in every mile. We specialize in providing reliable, efficient, and safe transportation solutions tailored to meet the dynamic needs of modern businesses. Our dedicated team and modern fleet ensure your cargo reaches its destination on time, every time.
@@ -110,11 +110,11 @@ export function WhoWeAre() {
                             {/* Feature Item 1 */}
                             <div className="group bg-slate-50 dark:bg-slate-900/50 p-6 rounded-2xl hover:bg-white dark:hover:bg-slate-800 border border-transparent hover:border-slate-200 dark:hover:border-slate-700 transition-all shadow-sm hover:shadow-lg">
                                 <div className="flex items-start gap-6">
-                                    <div className="w-14 h-14 rounded-xl bg-[#ce181e] flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-[#ce181e]/30">
+                                    <div className="w-14 h-14 rounded-xl bg-[#ee4f27] flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-[#ee4f27]/30">
                                         <Globe className="w-7 h-7 text-white" />
                                     </div>
                                     <div>
-                                        <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2 group-hover:text-[#ce181e] transition-colors">Global Service</h3>
+                                        <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2 group-hover:text-[#ee4f27] transition-colors">Global Service</h3>
                                         <p className="text-slate-600 dark:text-gray-400 text-sm leading-relaxed">
                                             We offer comprehensive logistics solutions that connect your business to markets across states with seamless efficiency.
                                         </p>
@@ -125,11 +125,11 @@ export function WhoWeAre() {
                             {/* Feature Item 2 */}
                             <div className="group bg-slate-50 dark:bg-slate-900/50 p-6 rounded-2xl hover:bg-white dark:hover:bg-slate-800 border border-transparent hover:border-slate-200 dark:hover:border-slate-700 transition-all shadow-sm hover:shadow-lg">
                                 <div className="flex items-start gap-6">
-                                    <div className="w-14 h-14 rounded-xl bg-[#ce181e] flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-[#ce181e]/30">
+                                    <div className="w-14 h-14 rounded-xl bg-[#ee4f27] flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-[#ee4f27]/30">
                                         <Truck className="w-7 h-7 text-white" />
                                     </div>
                                     <div>
-                                        <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2 group-hover:text-[#ce181e] transition-colors">Local Service</h3>
+                                        <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2 group-hover:text-[#ee4f27] transition-colors">Local Service</h3>
                                         <p className="text-slate-600 dark:text-gray-400 text-sm leading-relaxed">
                                             Expert local distribution services ensuring rapid and reliable delivery within regional networks.
                                         </p>
@@ -140,7 +140,7 @@ export function WhoWeAre() {
 
                         <div className="pt-4">
                             <Link href="/apply">
-                                <Button className="bg-[#ce181e] hover:bg-[#a31317] text-white font-black uppercase tracking-widest px-8 h-12 rounded-lg shadow-lg shadow-[#ce181e]/20 transition-all hover:scale-105 active:scale-95 flex items-center gap-3 group">
+                                <Button className="bg-[#ee4f27] hover:bg-[#d64522] text-white font-black uppercase tracking-widest px-8 h-12 rounded-lg shadow-lg shadow-[#ee4f27]/20 transition-all hover:scale-105 active:scale-95 flex items-center gap-3 group">
                                     Apply Now
                                     <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                                 </Button>

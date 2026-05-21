@@ -44,15 +44,15 @@ export default function Contact() {
                     {/* Layer 3: Content */}
                     <div className="absolute inset-0 z-20 flex items-center justify-center md:justify-start px-8 md:px-20">
                         <div className="max-w-xl text-white">
-                            <div className="inline-block px-3 py-1 bg-[#ce181e] mb-4 text-xs font-bold uppercase tracking-widest pl-2 border-l-4 border-white animate-fade-in-up">
+                            <div className="inline-block px-3 py-1 bg-[#ee4f27] mb-4 text-xs font-bold uppercase tracking-widest pl-2 border-l-4 border-white animate-fade-in-up">
                                 Contact Us
                             </div>
                             <h1 className="text-5xl md:text-7xl font-black font-display uppercase tracking-tight mb-4 drop-shadow-lg">
                                 Contact Us
                             </h1>
                             <div className="flex items-center gap-2 text-sm md:text-base font-medium text-gray-400">
-                                <span className="hover:text-[#ce181e] cursor-pointer transition-colors">Home</span>
-                                <span className="text-[#ce181e]">→</span>
+                                <span className="hover:text-[#ee4f27] cursor-pointer transition-colors">Home</span>
+                                <span className="text-[#ee4f27]">→</span>
                                 <span className="text-white">Contact Us</span>
                             </div>
                         </div>
@@ -74,9 +74,9 @@ export default function Contact() {
                             {/* Left Column - Info */}
                             <div>
                                 <div className="flex items-center gap-2 mb-4">
-                                    <span className="h-[2px] w-8 bg-[#ce181e]"></span>
-                                    <span className="text-[#ce181e] font-bold uppercase tracking-wider text-sm">Contact Us</span>
-                                    <span className="text-[#ce181e]">→</span>
+                                    <span className="h-[2px] w-8 bg-[#ee4f27]"></span>
+                                    <span className="text-[#ee4f27] font-bold uppercase tracking-wider text-sm">Contact Us</span>
+                                    <span className="text-[#ee4f27]">→</span>
                                 </div>
                                 <h2 className="text-4xl md:text-5xl font-black font-display uppercase text-slate-900 dark:text-white mb-6 leading-tight">
                                     Get in Touch With Butata LLC
@@ -89,10 +89,22 @@ export default function Contact() {
 
                                 {/* Social Icons */}
                                 <div className="flex items-center gap-4">
-                                    {[Facebook, Instagram, Twitter, Linkedin].map((Icon, idx) => (
-                                        <div key={idx} className="w-12 h-12 border border-slate-200 dark:border-slate-700 rounded-full flex items-center justify-center text-slate-500 hover:text-white hover:bg-[#ce181e] hover:border-[#ce181e] transition-all duration-300 cursor-pointer shadow-sm hover:shadow-lg hover:-translate-y-1">
+                                    {[
+                                        { Icon: Facebook, href: "https://www.facebook.com/profile.php?id=61588441350610", label: "Facebook" },
+                                        { Icon: Instagram, href: "https://www.instagram.com/butatallc/", label: "Instagram" },
+                                        { Icon: Twitter, href: "#", label: "Twitter" },
+                                        { Icon: Linkedin, href: "#", label: "LinkedIn" },
+                                    ].map(({ Icon, href, label }) => (
+                                        <a
+                                            key={label}
+                                            href={href}
+                                            target={href !== "#" ? "_blank" : undefined}
+                                            rel={href !== "#" ? "noopener noreferrer" : undefined}
+                                            aria-label={label}
+                                            className="w-12 h-12 border border-slate-200 dark:border-slate-700 rounded-full flex items-center justify-center text-slate-500 hover:text-white hover:bg-[#ee4f27] hover:border-[#ee4f27] transition-all duration-300 cursor-pointer shadow-sm hover:shadow-lg hover:-translate-y-1"
+                                        >
                                             <Icon className="w-5 h-5" />
-                                        </div>
+                                        </a>
                                     ))}
                                 </div>
                             </div>
@@ -126,27 +138,27 @@ export default function Contact() {
                                 >
                                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                         <div className="space-y-2">
-                                            <Input name="name" placeholder="Name" required className="h-12 bg-slate-50 dark:bg-slate-900 border-slate-200 dark:border-slate-700 focus:border-[#ce181e] focus:ring-0 rounded-xl" />
+                                            <Input name="name" placeholder="Name" required className="h-12 bg-slate-50 dark:bg-slate-900 border-slate-200 dark:border-slate-700 focus:border-[#ee4f27] focus:ring-0 rounded-xl" />
                                         </div>
                                         <div className="space-y-2">
-                                            <Input name="email" placeholder="Email" type="email" required className="h-12 bg-slate-50 dark:bg-slate-900 border-slate-200 dark:border-slate-700 focus:border-[#ce181e] focus:ring-0 rounded-xl" />
+                                            <Input name="email" placeholder="Email" type="email" required className="h-12 bg-slate-50 dark:bg-slate-900 border-slate-200 dark:border-slate-700 focus:border-[#ee4f27] focus:ring-0 rounded-xl" />
                                         </div>
                                     </div>
 
                                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                         <div className="space-y-2">
-                                            <Input name="phone" placeholder="Phone" type="tel" className="h-12 bg-slate-50 dark:bg-slate-900 border-slate-200 dark:border-slate-700 focus:border-[#ce181e] focus:ring-0 rounded-xl" />
+                                            <Input name="phone" placeholder="Phone" type="tel" className="h-12 bg-slate-50 dark:bg-slate-900 border-slate-200 dark:border-slate-700 focus:border-[#ee4f27] focus:ring-0 rounded-xl" />
                                         </div>
                                         <div className="space-y-2">
-                                            <Input name="subject" placeholder="Subject" className="h-12 bg-slate-50 dark:bg-slate-900 border-slate-200 dark:border-slate-700 focus:border-[#ce181e] focus:ring-0 rounded-xl" />
+                                            <Input name="subject" placeholder="Subject" className="h-12 bg-slate-50 dark:bg-slate-900 border-slate-200 dark:border-slate-700 focus:border-[#ee4f27] focus:ring-0 rounded-xl" />
                                         </div>
                                     </div>
 
                                     <div className="space-y-2">
-                                        <Textarea name="message" placeholder="Message" required className="min-h-[150px] bg-slate-50 dark:bg-slate-900 border-slate-200 dark:border-slate-700 focus:border-[#ce181e] focus:ring-0 rounded-xl resize-none" />
+                                        <Textarea name="message" placeholder="Message" required className="min-h-[150px] bg-slate-50 dark:bg-slate-900 border-slate-200 dark:border-slate-700 focus:border-[#ee4f27] focus:ring-0 rounded-xl resize-none" />
                                     </div>
 
-                                    <Button type="submit" disabled={isPending} className="w-full md:w-auto bg-[#ce181e] hover:bg-[#b91c1c] text-white font-bold h-12 px-8 uppercase tracking-wider rounded-xl shadow-lg shadow-[#ce181e]/20 transition-all hover:scale-105 active:scale-95 disabled:opacity-70">
+                                    <Button type="submit" disabled={isPending} className="w-full md:w-auto bg-[#ee4f27] hover:bg-[#d64522] text-white font-bold h-12 px-8 uppercase tracking-wider rounded-xl shadow-lg shadow-[#ee4f27]/20 transition-all hover:scale-105 active:scale-95 disabled:opacity-70">
                                         {isPending ? <Loader2 className="w-5 h-5 animate-spin" /> : <>Submit Now <ArrowRight className="ml-2 w-5 h-5" /></>}
                                     </Button>
                                 </form>
@@ -162,7 +174,7 @@ export default function Contact() {
                         <div className="bg-white dark:bg-slate-800 rounded-3xl shadow-xl p-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 pointer-events-auto border border-slate-100 dark:border-slate-700">
                             {/* Location */}
                             <div className="text-center">
-                                <div className="w-12 h-12 mx-auto bg-red-50 dark:bg-red-900/20 rounded-full flex items-center justify-center mb-4 text-[#ce181e]">
+                                <div className="w-12 h-12 mx-auto bg-red-50 dark:bg-red-900/20 rounded-full flex items-center justify-center mb-4 text-[#ee4f27]">
                                     <MapPin className="w-6 h-6" />
                                 </div>
                                 <h3 className="font-bold text-lg mb-2 text-slate-900 dark:text-white">Location</h3>
@@ -173,7 +185,7 @@ export default function Contact() {
 
                             {/* Working Hours */}
                             <div className="text-center border-t md:border-t-0 md:border-l border-slate-100 dark:border-slate-700 pt-8 md:pt-0">
-                                <div className="w-12 h-12 mx-auto bg-red-50 dark:bg-red-900/20 rounded-full flex items-center justify-center mb-4 text-[#ce181e]">
+                                <div className="w-12 h-12 mx-auto bg-red-50 dark:bg-red-900/20 rounded-full flex items-center justify-center mb-4 text-[#ee4f27]">
                                     <Clock className="w-6 h-6" />
                                 </div>
                                 <h3 className="font-bold text-lg mb-2 text-slate-900 dark:text-white">Working Hours</h3>
@@ -184,7 +196,7 @@ export default function Contact() {
 
                             {/* Email */}
                             <div className="text-center border-t lg:border-t-0 lg:border-l border-slate-100 dark:border-slate-700 pt-8 lg:pt-0">
-                                <div className="w-12 h-12 mx-auto bg-red-50 dark:bg-red-900/20 rounded-full flex items-center justify-center mb-4 text-[#ce181e]">
+                                <div className="w-12 h-12 mx-auto bg-red-50 dark:bg-red-900/20 rounded-full flex items-center justify-center mb-4 text-[#ee4f27]">
                                     <Mail className="w-6 h-6" />
                                 </div>
                                 <h3 className="font-bold text-lg mb-2 text-slate-900 dark:text-white">Email</h3>
@@ -195,7 +207,7 @@ export default function Contact() {
 
                             {/* phone */}
                             <div className="text-center border-t lg:border-t-0 lg:border-l border-slate-100 dark:border-slate-700 pt-8 lg:pt-0">
-                                <div className="w-12 h-12 mx-auto bg-red-50 dark:bg-red-900/20 rounded-full flex items-center justify-center mb-4 text-[#ce181e]">
+                                <div className="w-12 h-12 mx-auto bg-red-50 dark:bg-red-900/20 rounded-full flex items-center justify-center mb-4 text-[#ee4f27]">
                                     <Phone className="w-6 h-6" />
                                 </div>
                                 <h3 className="font-bold text-lg mb-2 text-slate-900 dark:text-white">Phones</h3>

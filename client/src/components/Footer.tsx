@@ -4,6 +4,13 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useState, useEffect } from "react";
 
+const socialLinks = [
+  { Icon: Facebook, href: "https://www.facebook.com/profile.php?id=61588441350610", label: "Facebook" },
+  { Icon: Instagram, href: "https://www.instagram.com/butatallc/", label: "Instagram" },
+  { Icon: Twitter, href: "#", label: "Twitter" },
+  { Icon: Linkedin, href: "#", label: "LinkedIn" },
+] as const;
+
 export function Footer() {
   const [showScroll, setShowScroll] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -65,7 +72,7 @@ export function Footer() {
   return (
     <footer className="relative mt-20">
       {/* Top Orange Banner */}
-      <div className="bg-[#ce181e] relative overflow-hidden">
+      <div className="bg-[#ee4f27] relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 lg:py-4 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-center">
             <div className="text-white space-y-4 ml-0 lg:-ml-80">
@@ -106,7 +113,7 @@ export function Footer() {
                 Logistic service provider company plays a pivotal role in the global supply chain logistic service provider.
               </p>
 
-              <div className="bg-[#ce181e] p-4 rounded-lg flex items-center gap-4 w-fit">
+              <div className="bg-[#ee4f27] p-4 rounded-lg flex items-center gap-4 w-fit">
                 <div className="bg-white/20 p-2 rounded-full">
                   <Phone className="w-5 h-5 text-white" />
                 </div>
@@ -120,7 +127,7 @@ export function Footer() {
             {/* Col 2: Quick Links */}
             <div>
               <h3 className="text-xl font-bold uppercase mb-8 flex items-center gap-2">
-                Quick Links <Map className="w-5 h-5 text-[#ce181e] -rotate-12" />
+                Quick Links <Map className="w-5 h-5 text-[#ee4f27] -rotate-12" />
               </h3>
               <ul className="space-y-4">
                 {[
@@ -130,8 +137,8 @@ export function Footer() {
                   { label: "Contact", href: "/contact" }
                 ].map((link, idx) => (
                   <li key={idx}>
-                    <Link href={link.href} className="text-gray-400 hover:text-[#ce181e] transition-colors flex items-center gap-2 group">
-                      <ArrowRight className="w-4 h-4 text-[#ce181e] opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all" />
+                    <Link href={link.href} className="text-gray-400 hover:text-[#ee4f27] transition-colors flex items-center gap-2 group">
+                      <ArrowRight className="w-4 h-4 text-[#ee4f27] opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all" />
                       {link.label}
                     </Link>
                   </li>
@@ -142,21 +149,21 @@ export function Footer() {
             {/* Col 3: Get In Touch */}
             <div>
               <h3 className="text-xl font-bold uppercase mb-8 flex items-center gap-2">
-                Get In Touch <Headset className="w-5 h-5 text-[#ce181e] -rotate-12" />
+                Get In Touch <Headset className="w-5 h-5 text-[#ee4f27] -rotate-12" />
               </h3>
               <ul className="space-y-6">
                 <li className="flex items-start gap-4 group">
-                  <MapPin className="w-6 h-6 text-[#ce181e] group-hover:animate-bounce" />
+                  <MapPin className="w-6 h-6 text-[#ee4f27] group-hover:animate-bounce" />
                   <span className="text-gray-400">596 Industry Drive, Suite 259<br />Tukwila, WA 98188</span>
                 </li>
                 <li className="flex items-start gap-4 group">
-                  <Mail className="w-6 h-6 text-[#ce181e] group-hover:skew-y-12 transition-transform" />
+                  <Mail className="w-6 h-6 text-[#ee4f27] group-hover:skew-y-12 transition-transform" />
                   <div className="flex flex-col">
                     <span className="text-gray-400">hr@butatallc.com</span>
                   </div>
                 </li>
                 <li className="flex items-start gap-4 group">
-                  <Phone className="w-6 h-6 text-[#ce181e] group-hover:rotate-12 transition-transform" />
+                  <Phone className="w-6 h-6 text-[#ee4f27] group-hover:rotate-12 transition-transform" />
                   <span className="text-gray-400">(206) 274-8232</span>
                 </li>
               </ul>
@@ -173,10 +180,17 @@ export function Footer() {
               © Copyright {new Date().getFullYear()} Butata LLC. All Rights Reserved
             </p>
             <div className="flex items-center gap-2">
-              {[Facebook, Instagram, Twitter, Linkedin].map((Icon, idx) => (
-                <div key={idx} className="w-10 h-10 bg-white/5 hover:bg-[#FF4D00] flex items-center justify-center transition-colors cursor-pointer group">
+              {socialLinks.map(({ Icon, href, label }) => (
+                <a
+                  key={label}
+                  href={href}
+                  target={href !== "#" ? "_blank" : undefined}
+                  rel={href !== "#" ? "noopener noreferrer" : undefined}
+                  aria-label={label}
+                  className="w-10 h-10 bg-white/5 hover:bg-[#ee4f27] flex items-center justify-center transition-colors cursor-pointer group"
+                >
                   <Icon className="w-5 h-5 text-white group-hover:scale-110 transition-transform" />
-                </div>
+                </a>
               ))}
             </div>
           </div>

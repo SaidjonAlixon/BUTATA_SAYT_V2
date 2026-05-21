@@ -67,8 +67,8 @@ export function LatestBlogs() {
 
                 {/* Header */}
                 <div className="text-center mb-16 space-y-4">
-                    <div className="flex items-center justify-center gap-2 text-[#ce181e] font-display font-bold uppercase tracking-widest text-sm">
-                        <span className="w-8 h-[2px] bg-[#ce181e]"></span>
+                    <div className="flex items-center justify-center gap-2 text-[#ee4f27] font-display font-bold uppercase tracking-widest text-sm">
+                        <span className="w-8 h-[2px] bg-[#ee4f27]"></span>
                         LATEST BLOGS
                         <div className="overflow-hidden w-8 h-6 relative flex items-center">
                             <motion.div
@@ -80,19 +80,19 @@ export function LatestBlogs() {
                                     repeatDelay: 0.5
                                 }}
                             >
-                                <Truck className="w-5 h-5 text-[#ce181e]" />
+                                <Truck className="w-5 h-5 text-[#ee4f27]" />
                             </motion.div>
                         </div>
                     </div>
                     <h2 className="text-4xl md:text-5xl font-display font-bold text-slate-900 dark:text-white">
-                        Latest Blogs & <span className="text-[#ce181e] underline decoration-[#ce181e]/30 underline-offset-8">NEWS</span>
+                        Latest Blogs & <span className="text-[#ee4f27] underline decoration-[#ee4f27]/30 underline-offset-8">NEWS</span>
                     </h2>
                 </div>
 
                 {/* Carousel */}
                 {loading ? (
                     <div className="flex justify-center py-16">
-                        <Loader2 className="w-10 h-10 animate-spin text-[#ce181e]" />
+                        <Loader2 className="w-10 h-10 animate-spin text-[#ee4f27]" />
                     </div>
                 ) : blogs.length === 0 ? (
                     <p className="text-center text-muted-foreground py-16">No news updates at this time</p>
@@ -127,23 +127,23 @@ export function LatestBlogs() {
                                                 />
                                                 <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors" />
                                                 <div className="absolute bottom-4 left-4 flex gap-0">
-                                                    <div className="bg-[#ce181e] text-white px-4 py-2 text-xs font-bold uppercase flex items-center gap-2 rounded-l-md">
+                                                    <div className="bg-[#ee4f27] text-white px-4 py-2 text-xs font-bold uppercase flex items-center gap-2 rounded-l-md">
                                                         <User className="w-3 h-3" /> Admin
                                                     </div>
                                                     <div className="bg-slate-900 text-white px-4 py-2 text-xs font-bold uppercase flex items-center gap-2 rounded-r-md">
-                                                        <Calendar className="w-3 h-3 text-[#ce181e]" /> {formatDate(blog.createdAt)}
+                                                        <Calendar className="w-3 h-3 text-[#ee4f27]" /> {formatDate(blog.createdAt)}
                                                     </div>
                                                 </div>
                                             </div>
                                             <div className="p-8 space-y-4">
-                                                <h3 className="text-xl font-bold font-display leading-tight group-hover:text-[#ce181e] transition-colors line-clamp-2">
+                                                <h3 className="text-xl font-bold font-display leading-tight group-hover:text-[#ee4f27] transition-colors line-clamp-2">
                                                     {blog.title}
                                                 </h3>
                                                 <p className="text-muted-foreground text-sm leading-relaxed line-clamp-3">
                                                     {blog.excerpt}
                                                 </p>
                                                 <div className="pt-4">
-                                                    <Button className="bg-[#ce181e] hover:bg-[#b91c1c] text-white font-bold uppercase tracking-wider text-xs px-6 rounded-lg transition-transform hover:translate-x-1">
+                                                    <Button className="bg-[#ee4f27] hover:bg-[#d64522] text-white font-bold uppercase tracking-wider text-xs px-6 rounded-lg transition-transform hover:translate-x-1">
                                                         Read More <ArrowRight className="ml-2 w-4 h-4" />
                                                     </Button>
                                                 </div>
@@ -152,8 +152,8 @@ export function LatestBlogs() {
                                     </CarouselItem>
                                 ))}
                             </CarouselContent>
-                            <CarouselPrevious className="left-0 -translate-y-1/2 border-[#ce181e]/30 bg-slate-900/90 hover:bg-slate-800 text-white" />
-                            <CarouselNext className="right-0 -translate-y-1/2 border-[#ce181e]/30 bg-slate-900/90 hover:bg-slate-800 text-white" />
+                            <CarouselPrevious className="left-0 -translate-y-1/2 border-[#ee4f27]/30 bg-slate-900/90 hover:bg-slate-800 text-white" />
+                            <CarouselNext className="right-0 -translate-y-1/2 border-[#ee4f27]/30 bg-slate-900/90 hover:bg-slate-800 text-white" />
                         </Carousel>
                     </div>
                 )}

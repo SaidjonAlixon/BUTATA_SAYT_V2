@@ -133,7 +133,7 @@ export function RequestQuoteForm() {
                         />
                         <Button
                             type="submit"
-                            className="w-full group relative overflow-hidden bg-gradient-to-r from-[#ce181e] to-[#ef4444] hover:from-[#b91c1c] hover:to-[#ce181e] text-white font-bold uppercase tracking-widest text-sm py-5 mt-2 shadow-lg shadow-red-600/20 transition-all hover:scale-[1.02] border border-red-600/30"
+                            className="w-full group relative overflow-hidden bg-gradient-to-r from-[#ee4f27] to-[#ee4f27] hover:from-[#d64522] hover:to-[#ee4f27] text-white font-bold uppercase tracking-widest text-sm py-5 mt-2 shadow-lg shadow-red-600/20 transition-all hover:scale-[1.02] border border-red-600/30"
                         >
                             <div className="absolute inset-0 bg-white/20 translate-y-full transition-transform duration-300 ease-out group-hover:translate-y-0" />
                             <span className="relative z-10 flex items-center justify-center gap-2">

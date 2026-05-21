@@ -202,7 +202,7 @@ export default function Home() {
               </video>
               {/* Dynamic Gradient per Video */}
               <div
-                className={`absolute inset-0 bg-gradient-to-r from-[#020617] via-[#0f172a]/90 z-20 ${id === 1 ? "to-[#ce181e]/30" : "to-[#3b82f6]/40"
+                className={`absolute inset-0 bg-gradient-to-r from-[#020617] via-[#0f172a]/90 z-20 ${id === 1 ? "to-[#ee4f27]/30" : "to-[#3b82f6]/40"
                   }`}
               />
             </div>
@@ -222,7 +222,7 @@ export default function Home() {
                     transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
                   >
                     <div className="flex items-center gap-2 mb-2">
-                      <div className="w-3 h-3 rounded-full bg-[#ce181e] animate-pulse shadow-[0_0_10px_#ce181e]" />
+                      <div className="w-3 h-3 rounded-full bg-[#ee4f27] animate-pulse shadow-[0_0_10px_#ee4f27]" />
                       <span className="text-white font-bold tracking-[0.2em] uppercase text-sm md:text-base drop-shadow-lg">WELCOME TO BUTATA LLC</span>
                     </div>
                     <h1 className="text-4xl sm:text-6xl md:text-7xl font-display font-black uppercase tracking-tight text-white mb-6 leading-tight drop-shadow-2xl">
@@ -244,16 +244,16 @@ export default function Home() {
                   transition={{ delay: 0.5, type: "spring", stiffness: 200, damping: 20 }}
                 >
                   <Link href="/apply">
-                    <Button size="lg" className="group relative overflow-hidden bg-white text-[#ce181e] font-black uppercase tracking-widest text-base lg:text-lg px-6 py-4 lg:px-10 lg:py-8 h-auto rounded-xl shadow-2xl shadow-red-600/30 transition-all hover:scale-105 active:scale-95 w-full sm:w-auto border-2 border-[#ce181e] backdrop-blur-sm">
+                    <Button size="lg" className="group relative overflow-hidden bg-white text-[#ee4f27] font-black uppercase tracking-widest text-base lg:text-lg px-6 py-4 lg:px-10 lg:py-8 h-auto rounded-xl shadow-2xl shadow-red-600/30 transition-all hover:scale-105 active:scale-95 w-full sm:w-auto border-2 border-[#ee4f27] backdrop-blur-sm">
 
                       {/* Left Curtain */}
-                      <div className="absolute inset-y-0 left-0 w-[51%] bg-gradient-to-r from-[#ce181e] to-[#ef4444] transition-transform duration-500 ease-out group-hover:-translate-x-full z-10" />
+                      <div className="absolute inset-y-0 left-0 w-[51%] bg-gradient-to-r from-[#ee4f27] to-[#ee4f27] transition-transform duration-500 ease-out group-hover:-translate-x-full z-10" />
 
                       {/* Right Curtain */}
-                      <div className="absolute inset-y-0 right-0 w-[51%] bg-gradient-to-l from-[#ce181e] to-[#ef4444] transition-transform duration-500 ease-out group-hover:translate-x-full z-10" />
+                      <div className="absolute inset-y-0 right-0 w-[51%] bg-gradient-to-l from-[#ee4f27] to-[#ee4f27] transition-transform duration-500 ease-out group-hover:translate-x-full z-10" />
 
                       {/* Content */}
-                      <span className="relative z-20 flex items-center text-white group-hover:text-[#ce181e] transition-colors duration-500">
+                      <span className="relative z-20 flex items-center text-white group-hover:text-[#ee4f27] transition-colors duration-500">
                         Apply for a Job <ArrowRight className="ml-3 h-5 w-5 lg:h-6 lg:w-6 transition-transform group-hover:translate-x-2" />
                       </span>
                     </Button>
@@ -269,7 +269,7 @@ export default function Home() {
                     <Button variant="outline" size="lg" className="group relative overflow-hidden border-2 border-white/20 text-white bg-white/5 font-bold uppercase tracking-widest text-base lg:text-lg px-6 py-4 lg:px-10 lg:py-8 h-auto rounded-xl backdrop-blur-md transition-all hover:scale-105 active:scale-95 w-full sm:w-auto hover:border-white/40">
                       {/* Fill Effect */}
                       <div className="absolute inset-0 bg-white origin-bottom scale-y-0 transition-transform duration-500 ease-out group-hover:scale-y-100 z-0" />
-                      <span className="relative z-10 group-hover:text-[#ce181e] transition-colors duration-500">ABOUT US</span>
+                      <span className="relative z-10 group-hover:text-[#ee4f27] transition-colors duration-500">ABOUT US</span>
                     </Button>
                   </Link>
                 </motion.div>
@@ -476,7 +476,7 @@ export default function Home() {
             Join thousands of satisfied drivers who have made Butata LLC their home. Apply today and start your journey.
           </p>
           <Link href="/apply">
-            <Button size="lg" className="group relative overflow-hidden bg-[#ce181e] hover:bg-[#b91c1c] text-white font-bold px-10 py-6 text-xl rounded-xl shadow-2xl shadow-red-600/30 hover:shadow-red-600/50 transition-all border-2 border-white hover:animate-rubberBand">
+            <Button size="lg" className="group relative overflow-hidden bg-[#ee4f27] hover:bg-[#d64522] text-white font-bold px-10 py-6 text-xl rounded-xl shadow-2xl shadow-red-600/30 hover:shadow-red-600/50 transition-all border-2 border-white hover:animate-rubberBand">
               <span className="relative flex items-center gap-3">
                 Start Application <Trophy className="w-6 h-6 group-hover:rotate-12 transition-transform" />
               </span>
