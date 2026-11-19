@@ -174,6 +174,10 @@ export default function Apply() {
       return json ?? {};
     },
     onSuccess: () => {
+      // Fire Google Ads conversion only after server confirms acceptance (once per success).
+      if (typeof window.trackButataApplicationSuccess === "function") {
+        window.trackButataApplicationSuccess();
+      }
       toast({
         title: "Application Received!",
         description: "Thank you for applying to Butata LLC. Our recruiting team will review your application and contact you shortly.",
